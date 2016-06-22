@@ -1,56 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>XXX官网</title>
-	<link rel="stylesheet" href="weeeebstyle.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * { margin: 0; padding: 0; }
+        body { padding-bottom: 1000px; font-family: "Microsoft YaHei"; }
+        .header {  background-color: #000; opacity: .5; filter:alpha(opacity=50);
+            height: 80px; width: 100%; position: fixed; z-index: 999; top: 0;
+        }
+        .section { margin-top: 100px; }
+        ul { position: fixed; right: 40px; top: 100px; }
+        ul li { margin-top: 10px; }
+        ul li a { color: #000; text-decoration: none; }
+        .container {  width: 600px; margin: 0 auto;   }
+        .test { margin-top: 50PX ; }
+        .test h2 {  font-size: 18px; font-weight: 800; }
+        .test .box { width: 600px; height: 200px; background-color: #F46465;  }
+    </style>
 </head>
 <body>
-	<div class="header">
-		<div class="logo">
-			<img src="images/logo.png" alt="">
-		</div>
-		<div class="tel">
-			<p>咨询电话：<br>123-456-7890</p>
-		</div>
-		<div class="nav">
-			<ul>
-				<li><a href="#">首页</a></li>
-				<li><a href="#">关于我们</a></li>
-				<li><a href="#">新闻中心</a></li>
-				<li><a href="#">产品中心</a></li>
-				<li><a href="#">旗下企业</a></li>  
-				<li><a href="#">在线留言</a></li>
-				<li><a href="#">联系我们</a></li>
-			</ul>
-		</div>
-	</div>     <!-- 头部区域结束 -->
-	<div class="banner">
-		<img src="images/banner1.jpg" alt="this is a banner!">
-	</div>		<!-- 海报区域结束 -->
-	<div class="about">
-		<div class="box box_l">
-			<i></i>
-			<h2>公司简介</h2>
-			<p>公司简介公司简介公司简介公司简介公司简介公司简介</p>
-		</div>											<!-- 这种添加组的方式是什么意思呢 -->
-		<div class="box box_r">
-			<i></i>
-			<h2>padding-left: 199px;</h2>
-			<p>padding-left: 199px;padding-left: 199px;padding-left: 199px;padding-left: 199px;</p>
-		</div>
-	</div>		<!-- 关于区域结束 -->
-	<div class="pro">
-		<div class="arrow l">
-			<a href="#"> <i></i></a>
-		</div>
-		<div class="con"></div>
-		<div class="arrow r">
-			<a href="#"> <i></i></a>
-
-		</div>
-	</div>			<!-- 产品区域结束 -->
-	<div class="news"></div>		<!-- 新闻区域结束 -->
-	<div class="footer"></div>		<!-- 底部区域结束 -->
+<div class="header"></div>
+<div class="section">
+    <ul>
+        <li><a href="#test1">目录一</a></li>
+        <li><a href="#test2">目录二</a></li>
+        <li><a href="#test3">目录三</a></li>
+        <li><a href="#test4">目录四</a></li>
+    </ul>
+    <div class="container">
+        <div class="test">
+            <h2 id="test1">一、内容一</h2>
+            <div class="box"></div>
+        </div>
+        <div class="test">
+            <h2 id="test2">二、内容二</h2>
+            <div class="box"></div>
+        </div>
+        <div class="test">
+            <h2 id="test3">三、内容三</h2>
+            <div class="box"></div>
+        </div>
+        <div class="test">
+            <h2 id="test4">四、内容四</h2>
+            <div class="box"></div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
