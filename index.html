@@ -1,54 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        * { margin: 0; padding: 0; }
-        body { padding-bottom: 1000px; font-family: "Microsoft YaHei"; }
-        .header {  background-color: #000; opacity: .5; filter:alpha(opacity=50);
-            height: 80px; width: 100%; position: fixed; z-index: 999; top: 0;
-        }
-        .section { margin-top: 100px; }
-        ul { position: fixed; right: 40px; top: 100px; }
-        ul li { margin-top: 10px; }
-        ul li a { color: #000; text-decoration: none; }
-        .container {  width: 600px; margin: 0 auto;   }
-        .test { margin-top: 50PX ; }
-        .test h2 {  font-size: 18px; font-weight: 800; }
-        .test .box { width: 600px; height: 200px; background-color: #F46465;  }
-    </style>
+	<meta charset="UTF-8">
+	<title>Xixi20160512的个人站</title>
 </head>
+<style>
+	/*通用*/
+	ul,li{margin: 0;padding: 0;list-style-type: none;}
+	/*header区域*/
+	.header{width: 1000px;height:80px;margin: 0 auto;background-color:rgba(227,153,236,0.6); }
+	/*left*/
+	.name{width: 130px;display: inline-block;}
+	/*right*/
+	.pho ul{width: 400px;float: right;}
+	.pho li{float: left;width: 120px;height: 64px;padding-left: 64px;background: url(images/icon-sprites.png) no-repeat;}
+
+</style>
 <body>
-<div class="header"></div>
-<div class="section">
-    <ul>
-        <li><a href="#test1">目录一</a></li>
-        <li><a href="#test2">目录二</a></li>
-        <li><a href="#test3">目录三</a></li>
-        <li><a href="#test4">目录四</a></li>
-    </ul>
-    <div class="container">
-        <div class="test">
-            <h2 id="test1">一、内容一</h2>
-            <div class="box"></div>
-        </div>
-        <div class="test">
-            <h2 id="test2">二、内容二</h2>
-            <div class="box"></div>
-        </div>
-        <div class="test">
-            <h2 id="test3">三、内容三</h2>
-            <div class="box"></div>
-        </div>
-        <div class="test">
-            <h2 id="test4">四、内容四</h2>
-            <div class="box"></div>
-        </div>
-    </div>
-</div>
+	<div class="header">
+			<h1 class="name">阮细浩</h1><span>前端工程师</span>
+			<div class="pho">
+				<ul>
+					<li>手机</li>
+					<li>QQ</li>
+					<li>邮箱</li>
+				</ul>
+			</div>
+	</div>
 </body>
 </html>
