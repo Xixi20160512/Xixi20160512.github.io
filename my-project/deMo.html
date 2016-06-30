@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AppleWatch单页面展示Demo</title>
+	<link rel="stylesheet" href="fullPage.css">
+	<script>
+		// 遇到的坑：1、调试用的谷歌浏览器是缩小到50%显示的，然后切换浏览器之后各种坑~~~
+		// 	       2、<img>元素是内联，宽度会默认平铺占满父级元素
+	</script>
+	<style>
+		/*公共样式*/
+		*{margin: 0;margin: 0;}
+		body{color: #000;font-family: "微软雅黑"}
+		h1{font-size: 33px;color: #fff;font-style: normal;}
+		p{font-size: 18px;color: #fff;opacity: .6;}
+		/*section1相关样式*/
+		.section1{background: url(hero_sunset_large_2x.jpg) no-repeat;background-size: 100%;overflow:hidden;}
+		.section1 h1{padding-top: 5%;text-align: center;}
+		.section1 p{padding-top: 5%;width: 818px;margin: 0 auto 0;text-align: center;}
+		.section1 a{margin: 5% auto 0;display: block;width: 90px;color: #ff8040;text-decoration: none;}
+		/*section2相关样式*/
+		.section2{background: url(technology_hero_large_2x.jpg) no-repeat;background-size: 100%;overflow:hidden;}
+		.section2 h1{padding-top: 3%;text-align: center;color: #000000;}
+		.section2 a{padding-top: 3%;display: block;width: 84px;margin: 0 auto 0;color: #24a5f2;}
+		/*section3相关样式*/
+		.section3{background: url(timekeeping_hero_large_2x.jpg)340px 270px no-repeat;background-size: 50%;}
+		.section3 h1{padding-top: 3%;text-align: center;color: #000000;}
+		.section3 p{padding-top: 3%;width: 818px;margin: 0 auto 0;color: #000000;text-align: center;}
+		.section3 a{padding-top: 3%;display: block;width: 124px;margin: 0 auto 0;color: #24a5f2;}
+		/*下面是一行三列的样式，不一定对*/
+		.row{display: flex;flex-flow: row nowrap;width: 75%;justify-content: space-around;margin: 0 auto;}
+	</style>
+</head>
+<body>
+	<div id="fullpage">
+		<div class="section section1">
+			<h1>它，终于来了。</h1>
+			<p>为了充分发挥体积小巧以及佩戴于手腕的优势，Apple Watch带来全新的科技和互动方式。它可以让你更快速便捷地完成早已习惯的事，也可以实现过去根本无法企及的新功能。因此，这将会是焕然一新的使用体验，也将实现与你前所未有的贴近。
+			</p>
+			<a href="#">进一步了解</a>
+		</div>
+		<div class="section section2">
+			<h1>真正与你贴近的个人设备。</h1>
+			<a href="#">进一步了解</a>
+		</div>
+		<div class="section section3">
+			<h1>非同一般的精准计时。</h1>
+			<p>高级手表向来计时精准为本，Apple Watch更是如此，它与你的iPhone配合使用，同全球标准时间的误差不超过50毫秒。而且你可以对表盘进行个性化设定，以更具个性和意义的方式显示时间，使其更贴合你的生活和日程需要。
+			</p>
+			<a href="#">进一步了解计时</a>
+		</div>
+		<div class="section section4">
+		<h1>在三个特点鲜明的系列中找到你的风格。</h1>
+		<div class="row">
+			<div class="column"><img src="primary_large_2x.jpg" alt=""></div>
+			<div class="column"><img src="sport_large_2x.jpg" alt=""></div>
+			<div class="column"><img src="edition_large_2x.jpg" alt=""></div>
+		</div>
+		</div>
+	</div>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="http://apps.bdimg.com/libs/jquery-fullPage/2.7.4/jquery.fullPage.js"></script>
+	<script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				navigation:true,  
+				// 显示导航圆点
+				verticalCentered:false,
+				// 取消垂直方向居中
+			});
+		});
+	</script>
+</body>
+</html>
