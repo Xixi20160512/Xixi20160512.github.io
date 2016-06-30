@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery实现图片轮播</title>
+	<style>
+		*{margin: 0;padding: 0}
+		.lunbo{width: 478px;height: 286px;/*overflow: hidden;*/}
+		div{position: relative;top: 200px;margin: 0 auto;}
+		ul{height: 25px;width: 478px; position: absolute;bottom: 0;right: 0;z-index: 999;background: url(img/taps_opacity.png);}
+		li{list-style-type: none;float: left;display: inline-block;width: 18px;height: 18px;background-color: #808040;border: 2px solid #b5b39b;text-align: center;}
+		li.on{background-color: #f4300d;}
+		li:hover{cursor: pointer;}
+		img{position: absolute;top: 0;left: 0;}
+	</style>
+</head>
+<body>
+整个流程：<br>
+
+1，将除了第一张以外的图片全部隐藏，<br>
+
+2，获取第一张图片的alt信息显示在信息栏，并添加点击事件<br>
+
+3，为4个按钮添加点击侦听，点击相应的按钮，用fadeOut，fadeIn方法显示图片<br>
+
+4，设置setInterval，定时执行切换函数<br>
+	<div class="lunbo">
+		<ul>
+			<li class="on">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<img class="show" src="img/o_p1.jpg" alt="这是图片1">
+		<img src="img/o_p3.jpg" alt="这是图片2">
+		<img src="img/o_p4.jpg" alt="这是图片3">
+		<img src="img/o_p5.jpg" alt="这是图片4">
+	</div>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$(".show~img").hide();
+				// console.log($("li:eq(3)"));
+			$("li:eq(0)").bind('click', function() {
+				$(".on").removeClass('on')
+				$(this).addClass('on')
+				$(".show").fadeOut().removeClass('show');
+				$("img:eq(0)").fadeIn('slow/400/fast').addClass('show');
+			});
+			$("li:eq(1)").bind('click', function() {
+				$(".on").removeClass('on')
+				$(this).addClass('on')
+				$(".show").fadeOut().removeClass('show');
+				$("img:eq(1)").fadeIn('slow/400/fast').addClass('show');
+			});
+			$("li:eq(2)").bind('click', function() {
+				$(".on").removeClass('on')
+				$(this).addClass('on')
+				$(".show").fadeOut().removeClass('show');
+				$("img:eq(2)").fadeIn('slow/400/fast').addClass('show');
+			});
+			$("li:eq(3)").bind('click', function() {
+				$(".on").removeClass('on')
+				$(this).addClass('on')
+				$(".show").fadeOut().removeClass('show');
+				$("img:eq(3)").fadeIn('slow/400/fast').addClass('show');
+			});
+			
+			
+		});
+	</script>
+</body>
+</html>
