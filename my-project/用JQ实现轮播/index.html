@@ -10,7 +10,7 @@
 		ul{height: 25px;width: 478px; position: absolute;bottom: 0;right: 0;z-index: 999;background: url(img/taps_opacity.png);}
 		li{list-style-type: none;float: left;display: inline-block;width: 18px;height: 18px;background-color: #808040;border: 2px solid #b5b39b;text-align: center;}
 		li.on{background-color: #f4300d;}
-		li:hover{cursor: pointer;}
+		li:hover{cursor: pointer;background-color: #f4300d;}
 		img{position: absolute;top: 0;left: 0;}
 	</style>
 </head>
@@ -40,33 +40,31 @@
 	<script>
 		$(document).ready(function() {
 			$(".show~img").hide();
-				// console.log($("li:eq(3)"));
-			$("li:eq(0)").bind('click', function() {
-				$(".on").removeClass('on')
-				$(this).addClass('on')
-				$(".show").fadeOut().removeClass('show');
-				$("img:eq(0)").fadeIn('slow/400/fast').addClass('show');
+			//下面代码是点击数字导航切换图片
+			$("li").click(function() {
+				var num = $(this).text()-1;
+				$(".on").removeClass('on');
+				$("li:eq("+num+")").addClass('on'); 
+				$("img:eq("+num+")").fadeIn('fast').addClass('show').siblings(':not("ul")').fadeOut('fast');
+				// 为什么eq里面是变量的时候要这样写啊
+				// 但是这样的链式操作真的好爽啊
 			});
-			$("li:eq(1)").bind('click', function() {
-				$(".on").removeClass('on')
-				$(this).addClass('on')
-				$(".show").fadeOut().removeClass('show');
-				$("img:eq(1)").fadeIn('slow/400/fast').addClass('show');
-			});
-			$("li:eq(2)").bind('click', function() {
-				$(".on").removeClass('on')
-				$(this).addClass('on')
-				$(".show").fadeOut().removeClass('show');
-				$("img:eq(2)").fadeIn('slow/400/fast').addClass('show');
-			});
-			$("li:eq(3)").bind('click', function() {
-				$(".on").removeClass('on')
-				$(this).addClass('on')
-				$(".show").fadeOut().removeClass('show');
-				$("img:eq(3)").fadeIn('slow/400/fast').addClass('show');
-			});
+			//下面代码是做自动轮播效果
 			
-			
+			setInterval(function () {
+				var active = $(".show");
+				var num = active.index();
+				active.removeClass('show').fadeOut('fast');
+				$(".on").removeClass('on');
+				if (active.next()[0]) {
+					active.next().fadeIn('fast').addClass('show');
+					$("li:eq("+num+")").addClass('on');
+				} else {
+					active.parent().children(':eq(1)').fadeIn('fast').addClass('show');
+					$("li:eq(0)").addClass('on');
+				}
+				
+			},4000);
 		});
 	</script>
 </body>
