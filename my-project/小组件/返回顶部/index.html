@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>backTotop</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		body{width: 1000px;margin: 0 auto;}
+		.l{float: left;}
+		.r{float: right;}
+		.header,.footer{height: 400px;background-color: #ff8040;}
+		.content{height: 1200px;}
+		.content .conl{height:1200px;width: 380px;background: #00ff40;}
+		.content .conr{height:1200px;width: 580px;background-color: #0080c0;}
+		/*返回顶部*/
+		.backtotop{position:fixed;z-index: 999;left: 33px;top: 34px;display: none;}
+		.backtotop:hover{cursor: pointer;}
+	</style>
+</head>
+<body>
+	<div class="header"></div>
+	<div class="content">
+		<div class="l conl"></div>
+		<div class="r conr"></div>
+	</div>
+	<div class="footer"></div>
+	<div class="backtotop"><img src="backTop.png"></div>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		var backtotop = $(".backtotop");
+		$(document).ready(function() {
+			// 滚动条滚动之后监测滚动条距顶部位置，显示或隐藏backtotop按钮
+			// if语句在加载之后只会运行一次，所以要给window添加滚动事件监听，每次滚动都要判断滚动条的位置
+			// $(window).scrollTop()返回的是滚动条距离顶部位置
+			// 把$(window).scrollTop()赋值给一个变量，定义这个变量的位置也很关键，不能定义在滚动监听事件的外部
+			$(window).scroll(function () {
+				// 表达式前后还是要有空格的，这是个好习惯
+				// 而且，在这里若是“>”和100之间没有空格的话算作是语法错误的！！
+				var top = $(window).scrollTop();
+				if (top > 100) {
+					backtotop.fadeIn('fast');
+				} else {
+					backtotop.fadeOut('fast');
+				};
+			});
+			// 给backtotop添加点击事件，滑动到页面顶部
+			// 用了animate方法
+			backtotop.on('click', function() {
+				$("body").animate({"scrollTop":0}, 455);
+			});
+		});
+	</script>
+</body>
+</html>
