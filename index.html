@@ -7,20 +7,24 @@
 </head>
 <style>
 	/*top*/
-	.top{border-bottom: 2px solid #c0c0c0;box-shadow: 0 2px 6px 0 #c0c0c0;}
+	.top{width: 100%; border-bottom: 2px solid #c0c0c0;box-shadow: 0 1px 9px 0 #c0c0c0;position: fixed;top: 0;background-color: #ffffff;}
 	/*header区域*/
-	.header{width: 1000px;height:80px;margin: 0 auto; }
-	.name{width: 110px;display: inline-block;margin-top: 30px;}
+	.header{width: 1000px;height:50px;margin: 0 auto; }
+	.name{width: 110px;display: inline-block;margin-top: 20px;}
 	.header ul{float: right;}
-	.header li{float: left;height:24px;line-height: 24px;padding: 0 24px 0 44px ;margin-top: 51px;background: url(images/icon-sprites.png) no-repeat;background-size: 24px;}
+	.header li{float: left;height:24px;line-height: 24px;padding: 0 24px 0 44px ;margin-top: 21px;background: url(images/icon-sprites.png) no-repeat;background-size: 24px;}
 	.header .qq{background-position: 0 -33px;}
 	.header .email{background-position: 0 -68px;}
-
+	/*内容区域*/
+	.content{margin: 62px auto 0; height: 2478px;width: 1000px;}
+	/*返回顶部*/
+	.backtotop{position:fixed;z-index: 999;left: 1000px;bottom: 34px;display: none;}
+	.backtotop:hover{cursor: pointer;}
 </style>
 <body>
 	<div class="top">
 		<div class="header">
-			<h1 class="name">阮细浩</h1><span>前端工程师</span>
+			<h1 class="name">阮细浩</h1><span>个人简历</span>
 				<ul>
 					<li class="phone">15027089756</li>
 					<li class="qq">1174308406</li>
@@ -28,8 +32,36 @@
 				</ul>
 		</div>
 	</div>
-	<a href="my-project/fullpage/deMo.html">全屏展示</a>
-	<a href="my-project/小组件/用JQ实现轮播/index.html">用jQuery实现的轮播</a>
-	<a href="my-project/小组件/返回顶部/">返回顶部</a>
+	<div class="content">
+		<a href="my-project/fullpage/deMo.html">全屏展示</a>
+		<a href="my-project/小组件/用JQ实现轮播/index.html">用jQuery实现的轮播</a>
+		<a href="my-project/小组件/返回顶部/">返回顶部</a>
+	</div>
+	<div class="backtotop"><img src="my-project/小组件/返回顶部/backTop.png"></div>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		var backtotop = $(".backtotop");
+		$(document).ready(function() {
+			// 滚动条滚动之后监测滚动条距顶部位置，显示或隐藏backtotop按钮
+			// if语句在加载之后只会运行一次，所以要给window添加滚动事件监听，每次滚动都要判断滚动条的位置
+			// $(window).scrollTop()返回的是滚动条距离顶部位置
+			// 把$(window).scrollTop()赋值给一个变量，定义这个变量的位置也很关键，不能定义在滚动监听事件的外部
+			$(window).scroll(function () {
+				// 表达式前后还是要有空格的，这是个好习惯
+				// 而且，在这里若是“>”和100之间没有空格的话算作是语法错误的！！
+				var top = $(window).scrollTop();
+				if (top > 100) {
+					backtotop.fadeIn('fast');
+				} else {
+					backtotop.fadeOut('fast');
+				};
+			});
+			// 给backtotop添加点击事件，滑动到页面顶部
+			// 用了animate方法
+			backtotop.on('click', function() {
+				$("body").animate({"scrollTop":0}, 455);
+			});
+		});
+	</script>
 </body>
 </html>
