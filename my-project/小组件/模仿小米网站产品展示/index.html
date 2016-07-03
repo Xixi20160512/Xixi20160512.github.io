@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>仿小米产品展示</title>
+	<style>
+		*{margin: 0;padding: 0;font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;}
+		.list{width: 1006px;height: 672px;margin: 49px auto 0;background-color: #f5f5f5;list-style-type: none;text-align: center;}
+		ul{list-style-type: none;}
+		li{float: left;width: 234px;height: 260px;padding: 20px 0;margin: 22px 0 14px 14px;background-color: #fff;-webkit-transition: all .2s linear;transition: all .2s linear;position: relative;}
+		.item_img{width: 160px;height: 160px;margin: 0 37px 18px 37px;}
+		.list_item img{width: 160px;height: 160px;}
+		.list .title {margin: 0 10px;font-size: 14px;font-weight: 400; text-align: center;font-size: 14px;font-weight: 400;}
+		.list .desc {margin: 0 10px 10px;height: 18px;font-size: 12px;text-align: center; text-overflow: ellipsis;white-space: nowrap;overflow: hidden; color: #b0b0b0;}
+		.list .price{color: #ff6700;}
+		.list_item_active { -webkit-box-shadow: 0 15px 30px rgba(0,0,0,0.1); box-shadow: 0 15px 30px rgba(0,0,0,0.1); -webkit-transform: translate3d(0, -2px, 0);}
+		.list_item_saleoff{color:#fff;height: 20px;width: 64px;line-height: 20px;position: absolute;top: 0px;left: 50%;margin-left: -32px;background-color: #ff1746;}
+		.list_item_new{color:#fff;height: 20px;width: 64px;line-height: 20px;position: absolute;top: 0px;left: 50%;margin-left: -32px;background-color: #50ef34;}
+	</style>
+</head>
+<body>
+	<div class="list">
+	<ul>
+		<li class="list_item ">
+			<div class="item_img"><a href="#"><img src="shouhuan.jpg" alt=""></a></div>
+			<h3 class="title">小米手环 光感版</h3>
+			<p class="desc">实时监测心率，科学运动</p>
+			<p class="price"><span>99</span>元</p>
+		</li>
+		<li class="list_item ">
+			<div class="item_img"><a href="#"><img src="路由器.jpg" alt=""></a></div>
+			<h3 class="title">小米体重秤</h3>
+			<p class="desc">100克，喝杯水都可感知的精准</p>
+			<p class="price"><span>99</span>元</p>
+		</li>
+		<li class="list_item ">
+			<div class="item_img"><a href="#"><img src="体重秤.jpg" alt=""></a></div>
+			<h3 class="title">小米路由器3</h3>
+			<p class="desc">四天线设计，更安全更稳定</p>
+			<p class="price"><span>99</span>元</p>
+		</li>
+		<li class="list_item ">
+			<div class="item_img"><a href="#"><img src="xiaoyixiangji.jpg" alt=""></a></div>
+			<h3 class="title">小蚁智能摄像机 夜视版</h3>
+			<p class="desc">能看能听能说，手机远程观看</p>
+			<p class="price"><span>149</span>元</p>
+		</li>
+	</ul>
+	<ul>
+		<li class="list_item ">
+			<div class="item_img"><a href="#"><img src="儿童手表.jpg" alt=""></a></div>
+			<h3 class="title">米兔儿童电话手表</h3>
+			<p class="desc">安全防走丢，宝贝的贴身护卫</p>
+			<p class="price"><span>299</span>元</p>
+		</li>
+		<li class="list_item ">
+			<div class="item_img"><a href="#"><img src="智能安防套装.jpg" alt=""></a></div>
+			<h3 class="title">小米智能安防套装</h3>
+			<p class="desc">智能警戒，为您的家增添一份安心</p>
+			<p class="price"><span>169</span>元</p>
+			<div class="list_item_saleoff">享9折</div>
+		<li class="list_item ">
+			<div class="item_img"><a href="#"><img src="智能台灯.jpg" alt=""></a></div>
+			<h3 class="title">米家LED智能台灯</h3>
+			<p class="desc">无可视频闪，亮度色温无级调节</p>
+			<p class="price"><span>169</span>元</p>
+			<div class="list_item_new">新品</div>
+		</li>
+		<li class="list_item ">
+			<div class="item_img"><a href="#"><img src="智能灯泡.jpg" alt=""></a></div>
+			<h3 class="title">Yeelight LED智能灯泡</h3>
+			<p class="desc">亮度自由调节 WIFI远程操作</p>
+			<p class="price"><span>99</span>元</p>
+		</li>
+	</ul>
+	</div>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$(".list li").hover(function() {
+			$(this).addClass('list_item_active')
+		}, function() {
+			$(this).removeClass('list_item_active')
+		});
+	});
+</script>
+</body>
+</html>
