@@ -6,15 +6,16 @@
 	<link rel="stylesheet" href="stylesheets/reset.css">
 </head>
 <style>
-	/*top*/
-	.top{width: 100%; border-bottom: 2px solid #c0c0c0;box-shadow: 0 1px 9px 0 #c0c0c0;position: fixed;top: 0;background-color: #ffffff;}
-	/*header区域*/
-	.header{width: 1000px;height:50px;margin: 0 auto; }
-	.name{width: 110px;display: inline-block;margin-top: 20px;}
-	.header ul{float: right;}
-	.header li{float: left;height:24px;line-height: 24px;padding: 0 24px 0 44px ;margin-top: 21px;background: url(images/icon-sprites.png) no-repeat;background-size: 24px;}
-	.header .qq{background-position: 0 -33px;}
-	.header .email{background-position: 0 -68px;}
+	/*通用样式*/
+	h1{font-family:"SimHei";font-size:35px;display: inline-block;}
+	ul{display: inline-block;}
+	/*headBra区域*/
+	.head{box-shadow: -5px 2px 13px #c0c0c0;height: 57px;line-height: 50px;}
+	.headBra{width: 1000px;margin: 0 auto;position: relative;}
+	.headBra_name{display: inline-block;}
+	.headBra_job{padding-left: 2%;}
+	.headBra_message{display: inline-block;position: absolute;left: 50%;}
+	.headBra_message li{float: left;margin-right: 23px;}
 	/*内容区域*/
 	.content{margin: 62px auto 0; height: 2478px;width: 1000px;}
 	/*返回顶部*/
@@ -22,14 +23,15 @@
 	.backtotop:hover{cursor: pointer;}
 </style>
 <body>
-	<div class="top">
-		<div class="header">
-			<h1 class="name">阮细浩</h1><span>个人简历</span>
-				<ul>
-					<li class="phone">15027089756</li>
-					<li class="qq">1174308406</li>
-					<li class="email">ruanxihao@126.com</li>
-				</ul>
+	<div class="head">
+		<div class="headBra">
+		<h1 class="headBra_name">阮细浩</h1>
+		<span class="headBra_job">前端工程师</span>
+		<ul class="headBra_message">
+			<li>15027089756</li>
+			<li>1174308406</li>
+			<li>ruanxihao@126.com</li>
+		</ul>
 		</div>
 	</div>
 	<div class="content">
