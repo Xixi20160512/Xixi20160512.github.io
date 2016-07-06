@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>慕课专题页</title>
+	<link rel="stylesheet" href="css/base.css">
+	<style>
+		/*top*/
+		.top{height: 690px;padding-top:30px; background: url(img/topbk.gif) no-repeat center 0;}  /*背景的center属性*/
+		.top_nav{width: 1100px;}
+		.top_nav_logo{width: 128px;height: 40px;background: url(img/logo.png);}
+		.backHome{line-height: 30px;color: #fff !important;}
+		.backHome img{margin-left: }
+		.shareBar{width: 138px;height: 42px;margin-top: 5px;}
+		.icon_share{height: 30px;width: 30px; margin-right: 5px;}
+		.icon_share_qq{background: url(img/share_qq.png) no-repeat;}
+		.icon_share_weibo{background: url(img/share_weibo.png) no-repeat;}
+		.icon_share_weixin{background: url(img/share_weixin.png) no-repeat;}
+		/*box1样式*/
+		.box1{background: url(img/bk1.jpg) no-repeat center 0;height: 563px;padding-top: 55px;text-align: center;}
+		.title{color: #ff0000;font-size: 32px;line-height: 32px;}
+		.title_1{margin-top: 15px;margin-bottom: 100px;font-weight: normal;color: #274A84;}
+		.innerBox{width: 1000px;height: 305px;}
+		.innerBox>div{width: 280px;height: 305px;margin-right: 80px;background-color: #fff;float: left;position: relative;box-shadow: 2px 2px 12px #c0c0c0;}
+		.innerBox>div:last-child{margin-right: 0;}   /* 在box2的时候，有一种其他的方法解决这个问题*/
+		.innerBox img{position: absolute;left: 90px;top: -70px;}
+		.innerBox p{margin-bottom: 12px;}
+		.innerBox_teamName{margin-top: 44px;font-size: 16px;font-weight: bold;line-height: 16px;}
+		.innerBox_into{font-size: 14px;line-height: 14px;font-weight: normal;color:#274A84;margin-bottom: 12px; }
+		.innerBox_job{width: 200px;height: 85px;border-top: 1px solid #FFB2D1;border-bottom: 1px solid #FFB2D1;}
+		.innerBox_job_name{margin-top: 20px;line-height: 20px;font-size: 20px;font-weight: bold;color: #f4285b;}
+		.innerBox_job_font{line-height: 14px;font-size: 14px;font-weight: normal;color: #000000;}
+		/*box2样式*/
+		.box2{height: 892px;background: url(img/bk2.jpg) no-repeat center 0;text-align: center;}
+		.box2_innerBox{width: 1120px;height: 812px;}
+		.box2_innerBox li{width: 320px;height: 326px;margin-top: 80px;margin-right: 80px;box-shadow: 0px 8px 16px 0px rgba(7, 17, 27, 0.4);}
+		.box2_innerBox li:first-child{box-shadow: none;}
+		.box2_innerBox li>div{width: 280px;height: 286px;background: rgba(255,255,255,0.7);margin:20px auto;}
+		.box2_innerBox_li1{background: url(img/list_red.jpg);color: #ffffff;}
+		.box2_innerBox_li2{background: url(img/list1.jpg);}
+		.box2_innerBox_li3{background: url(img/list2.jpg);}
+		.box2_innerBox_li4{background: url(img/list3.jpg);}
+		.box2_innerBox_li5{background: url(img/list4.jpg);}
+		.box2_innerBox_li6{background: url(img/list5.jpg);}
+		.box2_innerBox .top{width: 220px;height: 72px;padding-top: 40px;border-bottom: 1px solid #000000;background: none;}
+		.box2_innerBox .middle{width: 220px;height: 50px;padding-top: 20px;}
+		.box2_innerBox .bottom{width: 161px;height: 40px;margin-top:22px;background: rgb(255, 0, 102);color: #fff;line-height: 40px;}
+		/*box3样式*/
+		.box3{background: url(img/bk3.jpg) no-repeat center 0;height: 715px;text-align: center;}
+		.box3_innerBox{width: 785px;height: 260px;background-color: #fff;box-shadow: 1px 2px 18px 0px rgba(7, 17, 27, 0.4);margin-bottom: 60px;}
+		.box3_innerBox ul>li{line-height: 44px;list-style-type: disc;}
+		.box3_bottom{width: 800px;}
+		.box3_bottom_left,.box3_bottom_right{width: 400px;float: left;}
+		.box3_bottom_button{width: 240px;height: 60px;margin: 0 80px;border-radius: 4px;background: rgb(255,0,102);font-size: 20px;line-height: 60px;color: #fff;margin-bottom: 14px;}
+		.box3_bottom_p1{font-size: 14px;color: #FF0066;line-height: 24px;}
+		.box3_bottom_p2{font-size: 16px;line-height: 24px;}
+		.box3_bottom_p3{color: #6B7177;font-size: 14px;line-height: 24px;}
+		/*box4样式*/
+		.box4{background-color: #D9DDE1;height: 709px;padding-top: 60px;padding-bottom: 100px;text-align: center;}
+		.box4 div{text-align: left;}
+		.box4_title{font-size: 36px;line-height: 44px;font-weight: bold;color: #F4285B; }
+		.box4_subTitle{font-size: 24px;line-height: 24px;margin-top: 16px;color: #274A84;margin-bottom: 60px;}
+		.box4_note{width: 720px;padding: 10px 40px 15px 40px;background:rgb(238, 238, 238);margin-bottom: 5px;border-radius: 3px;}
+		.box4_note_title{font-size: 20px;line-height: 20px;margin: 20px 0;font-weight: bold;color: #000;}
+		.box4_note_content{font-size: 14px;line-height: 24px;color: #7e7e7e;margin-bottom: 33px;}
+		/*bottom样式*/
+		.bottom{height: 100px;background: rgb(39, 74, 132);line-height: 100px;color: #fff;font-size:14px;text-align: center;}
+	</style>
+</head>
+<body>
+	<div class="top">
+		<div class="top_nav auto">
+			<a href="#" class="top_nav_logo fl"></a>    <!-- a元素浮动之后可以设置高度和宽度 -->
+			<a class="backHome fr" href="#">返回慕课网首页   <img src="img/arrow.png"></a>
+			<div class="shareBar  fr">
+				<a class="icon_share icon_share_qq fl" href="#"></a>
+				<a class="icon_share icon_share_weibo fl" href="#"></a>
+				<a class="icon_share icon_share_weixin fl" href="#"></a>
+			</div>
+		</div>
+	</div>
+	<div class="box1">
+		<h1 class="title">入职敲门砖</h1>
+		<h2 class="title_1">实战课学员专享特权</h2>
+		<div class="innerBox auto">
+			<div name="tencent">
+				<img src="img/icon_qq.png">
+				<p class="innerBox_teamName">腾讯AlloyTeam</p>
+				<p class="innerBox_into">腾讯Web前端团队</p>
+				<div class="innerBox_job auto">
+					<p class="innerBox_job_name">Web前端开发工程师</p>
+					<p class="innerBox_job_font">实习岗位</p>
+				</div>
+				<p class="innerBox_job_font mgt24">名额：3个</p>
+				<p class="innerBox_job_font">要求：较强的自主学习能力</p>
+				<p class="innerBox_job_font">熟悉Web性能优化；熟悉CSS3</p>
+			</div>
+			<div name="baidu">
+				<img src="img/icon_baidu.png">
+				<p class="innerBox_teamName">百度FEX团队</p>
+				<p class="innerBox_into">前端开发方向</p>
+				<div class="innerBox_job auto">
+					<p class="innerBox_job_name">Web前端开发工程师</p>
+					<p class="innerBox_job_font">实习岗位</p>
+				</div>
+				<p class="innerBox_job_font mgt24">名额：2个</p>
+				<p class="innerBox_job_font">要求：看重计算机基础，偏全栈</p>
+			</div>
+			<div name="alibaba">
+				<img src="img/icon_tianmao.png" alt="">
+				<p class="innerBox_teamName">阿里聚划算团队</p>
+				<p class="innerBox_into">阿里前端团队</p>
+				<div class="innerBox_job auto">
+					<p class="innerBox_job_name">Web前端开发工程师</p>
+					<p class="innerBox_job_font">全职岗位</p>
+				</div>
+				<p class="innerBox_job_font mgt24">名额：2个</p>
+				<p class="innerBox_job_font">要求：够聪明，爱学习</p>
+			</div>
+		</div>
+	</div>
+	<div class="box2">
+		<div class="box2_innerBox auto">
+			<ul>
+				<li class="box2_innerBox_li1">
+				<p class="f60">你欠缺的</p>
+				<p class="f48">实战课给你</p>
+				<p class="f20">用项目经验和作品证明你的<br>编程能力</p>
+				</li>
+				<li class="box2_innerBox_li2">
+					<div class="">
+						<div class="top auto">
+							<p class="f24">7天搞定Node.js微信公众号开发</p>
+						</div>
+						<div class="middle auto">
+							<p class="f12">微信公众号已经1000多万个了，即使不为市场，为自己也应该学会开发它。</p>
+						</div>
+						<a href="#">
+							<div class="bottom auto">
+							立即报名
+							</div>
+						</a>
+					</div>
+				</li>
+				<li class="box2_innerBox_li3 mgr0">
+					<div class="">
+					<div class="">
+						<div class="top auto">
+							<p class="f24">用组件方式开发Web App全站</p>
+						</div>
+						<div class="middle auto">
+							<p class="f12">不仅刷爆朋友圈，HTML5确实可以让人更好的看清数据的真相</p>
+						</div>
+						<a href="#">
+							<div class="bottom auto">
+							立即报名
+							</div>
+						</a>
+					</div>
+					</div></li>
+				<li class="box2_innerBox_li4">
+					<div class="">
+					<div class="">
+						<div class="top auto">
+							<p class="f24">前端到后台ThinkPHP开发整站</p>
+						</div>
+						<div class="middle auto">
+							<p class="f12">说实话，想一个人开发整站已经很久了，这种感受你懂得！</p>
+						</div>
+						<a href="#">
+							<div class="bottom auto">
+							立即报名
+							</div>
+						</a>
+					</div>
+					</div>
+				</li>
+				<li class="box2_innerBox_li5">
+					<div class="">
+					<div class="">
+						<div class="top auto">
+							<p class="f24">所向披靡的响应式开发</p>
+						</div>
+						<div class="middle auto">
+							<p class="f12">忘记设备尺寸，一套代码适配多终端，响应式开发让用户体验和开发效率完美结合。</p>
+						</div>
+						<a href="#">
+							<div class="bottom auto">
+							立即报名
+							</div>
+						</a>
+					</div>
+					</div>
+				</li>
+				<li class="box2_innerBox_li6 mgr0">
+					<div class="">
+					<div class="">
+						<div class="top auto">
+							<p class="f24">HTML5 移动Web App阅读器</p>
+						</div>
+						<div class="middle auto">
+							<p class="f12">用HTML5、ES6、Ajax异步、Touch事件等技术，开发商业Web APP。</p>
+						</div>
+						<a href="#">
+							<div class="bottom auto">
+							立即报名
+							</div>
+						</a>
+					</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="box3">
+		<h1 class="f36 pdt80 mgb36">进BAT实习报名流程</h1>
+		<div class="box3_innerBox auto pdl15 pdt15">
+			<ul class="pdl40">
+				<li>参与对象：购买慕课网实战的毕业生、在校生或者正在寻求BAT工作机会的在职人士</li>
+				<li>参赛者需根据实战课的学习，提交一份项目作品或学习心得</li>
+				<li>活动结束后，慕课网会评选出一批优秀者，直接内推进入BAT巨头：百度、天猫、腾讯进行面试</li>
+				<li>更设有鼓励奖5名，即所有参赛者中抽选5名幸运用户，赠送慕课网新潮舒适百搭T恤</li>
+				<li>本次活动由慕课网与BAT互联网行业联合发起，评选方式以慕课网为准</li>
+				<li>活动截止时间：2016年8月20日</li>
+			</ul>
+		</div>
+		<div class="box3_bottom clearfix auto">
+			<div class="box3_bottom_left">
+				<a href="#">
+					<div class="box3_bottom_button fl">项目作品提交</div>
+				</a>
+				<p class="box3_bottom_p1">作品示例</p>
+				<p class="box3_bottom_p2">标题“靠实战进腾讯 我的***作品”</p>
+				<p class="box3_bottom_p3">（标题关系到你意向的企业，请慎重填写）</p>
+			</div>
+			<div class="box3_bottom_right">
+				<a href="#">
+					<div class="box3_bottom_button fr">手记写心得</div>
+				</a>
+				<p class="box3_bottom_p1">手记示例</p>
+				<p class="box3_bottom_p2">标题“靠实战进百度 我的实战课***学习心得”</p>
+				<p class="box3_bottom_p3">（标题关系到你意向的企业，请慎重填写）</p>
+			</div>
+		</div>
+	</div>
+	<div class="box4">
+		<p class="box4_title">前辈手记</p>
+		<p class="box4_subTitle">机会，只给有准备的人</p>
+		<a href="#">
+			<div class="box4_note auto">
+				<p class="box4_note_title">讲师说：我是怎么走web App开发这条路的</p>
+				<p class="box4_note_content">移动端浏览器的Web App在未来的1-2年内会是一个主流的开发方向；有天然的跨平台优势和类App的体验会有更广阔的应用前景。我要告诉大家：告诉大家在真正的商业产品中，唯有快和体验才是永远的真理，技术也要学会取舍。</p>
+			</div>
+		</a>
+		<a href="#">
+			<div class="box4_note auto">
+				<p class="box4_note_title">"老司机"说：回顾15年程序员生涯 我总结的7点经验</p>
+				<p class="box4_note_content">要透彻的理解一个技术的本质，只是学会使用是不行的，不但要知道how，还要知道why。写出漂亮代码并不容易，需要思路清晰，有良好的编程基础，有优秀的抽象能力，以及对一门语言的熟练掌握。</p>
+			</div>
+		</a>
+		<a href="#">
+			<div class="box4_note auto">
+				<p class="box4_note_title">学长说：慕课网实战课 让我突破又一技术高峰</p>
+				<p class="box4_note_content">曾几何时，我工作以后很长一段时间不知道该学些什么，月薪也稳稳地定格在了那里，我明白如果不做些什么，迟早会被应届生替换下去，因为道理很简单，你除了经验没有任何地方比他强，公司不会花两倍的钱来雇一个没什么区别的人。 直到我看了慕课网的《打造扛得住的MySQL数据库架构》，我好像重新找到了最初开始学习的激情和未来的发展方向。</p>
+			</div>
+		</a>
+	</div>
+	<div class="bottom">
+		© 2016 imooc.com All Rights Reserved   京ICP备13046642号
+	</div>
+</body>
+</html>
