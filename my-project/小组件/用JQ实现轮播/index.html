@@ -24,6 +24,9 @@
 3，为4个按钮添加点击侦听，点击相应的按钮，用fadeOut，fadeIn方法显示图片<br>
 
 4，设置setInterval，定时执行切换函数<br>
+2016/07/09凌晨更新：<br>
+1、解决快速点击时自动切换逻辑出错的bug，<br>
+2、优化代码结构，
 	<div class="lunbo">
 		<ul>
 			<li class="on">1</li>
@@ -38,33 +41,46 @@
 	</div>
 	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script>
+		var timer1 = true;
 		$(document).ready(function() {
-			$(".show~img").hide();
-			//下面代码是点击数字导航切换图片
-			$("li").click(function() {
-				var num = $(this).text()-1;
-				$(".on").removeClass('on');
-				$("li:eq("+num+")").addClass('on'); 
-				$("img:eq("+num+")").fadeIn('fast').addClass('show').siblings(':not("ul")').fadeOut('fast');
-				// 为什么eq里面是变量的时候要这样写啊
-				// 但是这样的链式操作真的好爽啊
-			});
-			//下面代码是做自动轮播效果
-			
-			setInterval(function () {
-				var active = $(".show");
-				var num = active.index();
-				active.removeClass('show').fadeOut('fast');
-				$(".on").removeClass('on');
-				if (active.next()[0]) {
-					active.next().fadeIn('fast').addClass('show');
-					$("li:eq("+num+")").addClass('on');
-				} else {
-					active.parent().children(':eq(1)').fadeIn('fast').addClass('show');
-					$("li:eq(0)").addClass('on');
-				}
-				
-			},4000);
+			(function(){
+				var $li = $("li");
+				var $img = $("img");
+				$img.not(':first').hide();
+				//下面代码是点击数字导航切换图片
+				$li.mousedown(function() {
+					clearInterval(timer1);
+					var $num = $(this).text()-1;
+					$li.filter(".on").removeClass('on');
+					$img.filter(".show").removeClass('show');
+					$li.eq($num).addClass('on'); 
+					$img.eq($num).fadeIn('fast').addClass('show').siblings(':not("ul")').fadeOut('fast');
+					// 这样的链式操作真的好爽啊
+				});
+				$li.mouseup(function() {
+					timer1 = setInterval(function () {
+				 		autochange();
+				 	},3000);
+				});
+				// 下面代码是做自动轮播效果
+				 var timer1 = setInterval(function () {
+				 		autochange();
+				 	},3000);	
+				 // 自动轮播封装
+				 function autochange() {
+				 	var $active = $img.filter(".show");
+				 	var $index = $active.index();
+				 	$active.removeClass('show').fadeOut('fast');
+				 	$li.filter(".on").removeClass('on');
+				 	if ($active.next()[0]) {
+				 		$active.next().fadeIn('fast').addClass('show');
+				 		$li.eq($index).addClass('on');
+				 	} else {
+				 		$active.parent().children(':eq(1)').fadeIn('fast').addClass('show');
+				 		$li.first().addClass('on');
+				 	}	
+				 };
+			})();
 		});
 	</script>
 </body>
