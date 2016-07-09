@@ -5,13 +5,13 @@
 	<title>jQuery实现图片轮播</title>
 	<style>
 		*{margin: 0;padding: 0}
-		.lunbo{width: 478px;height: 286px;/*overflow: hidden;*/}
-		div{position: relative;top: 200px;margin: 0 auto;}
-		ul{height: 25px;width: 478px; position: absolute;bottom: 0;right: 0;z-index: 999;background: url(img/taps_opacity.png);}
+		.lunbo{width: 700px;height:500px;position: relative;top: 100px;margin: 0 auto 200px;}
+		ul{height: 25px;width: 100%; position: absolute;bottom: 0;right: 0;z-index: 999;background: url(img/taps_opacity.png);overflow: hidden;}
 		li{list-style-type: none;float: left;display: inline-block;width: 18px;height: 18px;background-color: #808040;border: 2px solid #b5b39b;text-align: center;}
 		li.on{background-color: #f4300d;}
 		li:hover{cursor: pointer;background-color: #f4300d;}
-		img{position: absolute;top: 0;left: 0;}
+		img{position: absolute;top: 0;left: 0;width: 100%;}
+		.alt{height: 25px;width: 50%;line-height: 25px;text-align: right;margin-left: -20px;color: #ffffff;top: 25px;left: 50%;position: absolute;}
 	</style>
 </head>
 <body>
@@ -29,15 +29,16 @@
 2、优化代码结构，
 	<div class="lunbo">
 		<ul>
+			<div class="alt"></div>
 			<li class="on">1</li>
 			<li>2</li>
 			<li>3</li>
 			<li>4</li>
 		</ul>
-		<img class="show" src="img/o_p1.jpg" alt="这是图片1">
-		<img src="img/o_p3.jpg" alt="这是图片2">
-		<img src="img/o_p4.jpg" alt="这是图片3">
-		<img src="img/o_p5.jpg" alt="这是图片4">
+		<img class="show" src="img/西北的暮色.jpg" alt="西北的暮色">
+		<img src="img/手表.jpg" alt="拉风手表">
+		<img src="img/笔记本.jpg" alt="笔记本味道">
+		<img src="img/喧闹的街道.jpg" alt="喧闹的街道">
 	</div>
 	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script>
@@ -47,6 +48,24 @@
 				var $li = $("li");
 				var $img = $("img");
 				$img.not(':first').hide();
+				var showalt = function () {
+						var $box = $(".alt");
+						var $alt = $img.filter(".show").attr("alt");
+						console.log($box.html().length);
+						if ($box.html().length == 0) {
+							$box.html($alt).animate({
+								"top": "0"},
+								200);
+						} else {
+						$box.animate({
+							"top": "25px",},
+							200, function() {
+							$box.html($alt).animate({"top":"0"}, 200)
+								});
+							};
+				};
+				// 第一次加载的时候显示默认的第一张图片alt信息
+				showalt();
 				//下面代码是点击数字导航切换图片
 				$li.mousedown(function() {
 					clearInterval(timer1);
@@ -56,6 +75,8 @@
 					$li.eq($num).addClass('on'); 
 					$img.eq($num).fadeIn('fast').addClass('show').siblings(':not("ul")').fadeOut('fast');
 					// 这样的链式操作真的好爽啊
+					// 为底部区域添加图片alt信息
+					showalt();
 				});
 				$li.mouseup(function() {
 					timer1 = setInterval(function () {
@@ -75,9 +96,11 @@
 				 	if ($active.next()[0]) {
 				 		$active.next().fadeIn('fast').addClass('show');
 				 		$li.eq($index).addClass('on');
+				 		showalt();
 				 	} else {
 				 		$active.parent().children(':eq(1)').fadeIn('fast').addClass('show');
 				 		$li.first().addClass('on');
+				 		showalt();
 				 	}	
 				 };
 			})();
