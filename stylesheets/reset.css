@@ -18,3 +18,4 @@ a:hover{text-decoration:none;}
 .clearfix{display:block;}
 .clear{clear:both;height:0;font:0/0 Arial;visibility:hidden;}
 .none{display:none}
+.auto{margin: 0 auto;}

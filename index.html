@@ -9,18 +9,22 @@
 	/*头部介绍部分*/
 	.content_intro{margin-bottom: 23px;font: bold 33px/30px arial;}
 	/*内容区域*/
-	.content{box-shadow: 3px 6px 9px -2px  rgba(0,0,0,0.6);margin: 32px auto 0; height: 478px;width: 890px;border: 5px solid #369c38;border-radius: 35px;padding: 50px;font-family:"微软雅黑";font-size:20px;background: #F3F3F3;}
-	.content_list{line-height: 35px;}
-	.content_list>li{padding-left: 30px;background: url(images/危险物品_黑色.png) no-repeat 0 6px;background-size: 24px;position: relative;}
+	.content{position: relative;box-shadow: 3px 6px 9px -2px  rgba(0,0,0,0.6);margin: 32px auto 0; height: 478px;width: 890px;border: 5px solid #369c38;border-radius: 35px;padding: 50px;font-family:"微软雅黑";font-size:20px;background: #F3F3F3;}
+	.content_list{line-height: 35px;display: inline-block;}
+	.content_list>li{padding-left: 30px;background: url(images/危险物品-sprit.png) no-repeat 0 -28px;position: relative;}
 	.content_list>li{transition:left 2.4s linear;position: relative;}
 	.content_list>li>a{line-height: 35px;}
-	.content_list>li:hover{left: 22px;font-weight: bold;background: url(images/危险物品.png) no-repeat 0 6px;background-size: 24px;}
+	.content_list>li:hover{left: 22px;font-weight: bold;background: url(images/危险物品-sprit.png) no-repeat 0 6px;}
 	/*弹出的box*/
-	.content_list_showBox{display: none;position: absolute;width: 120px;left: 444px;top:-35px;border-radius: 5px;box-shadow: 2px 2px 13px 0 rgba(57,57,57,0.8);background: #ffffff;padding: 10px;}
+	.content_list_showBox{display: none;position: absolute;width: 250px;left: 444px;top:-35px;border-radius: 5px;box-shadow: 2px 2px 13px 0 rgba(57,57,57,0.8);background: #ffffff;padding: 10px;}
 	/*返回顶部*/
 	.backtotop{position:fixed;z-index: 999;left: 50%;bottom: 34px;margin-left: 500px;display: none;}
 	.backtotop:hover{cursor: pointer;}
-
+	/*个人信心栏*/
+	.content_info{position: absolute;bottom: 0;left: 50%;margin-left: -45%;padding: 12px 6px 12px;width: 90%;height: 30px;text-align: center;border-top: 1px solid #3a8546;}
+	.content_info li{float: left;margin-right: 44px;padding-left: 30px;font: normal 16px/20px "Tahoma";}
+	.content_info_cnblog{background: url(images/sprite_git_cnblog_30.png) no-repeat;}
+	.content_info_github{background: url(images/sprite_git_cnblog_30.png) no-repeat 0 -20px;}
 </style>
 <body>
 	<div class="content">
@@ -37,13 +41,27 @@
 			<li>
 				<a href="my-project/小组件/用JQ实现轮播/index.html">用jQuery实现的轮播</a>
 				<div class="content_list_showBox">
-					关键词：<br>  jQuery<br>
+					关键词：<br>  jQuery<br>兼容IE9+<br>
 				</div>
 			</li>
 			<li><a href="my-project/小组件/返回顶部/">返回顶部</a></li>
-			<li><a href="my-project/小组件/模仿小米网站产品展示/index.html">仿小米产品列表展示</a></li>
-			<li><a href="my-project/页面/慕课专题-靠实战进BAT/index.html">慕课网专题页面1</a></li>
+			<li><a href="my-project/小组件/模仿小米网站产品展示/index.html">仿小米产品列表展示</a>
+				<div class="content_list_showBox">
+					关键词：<br>  div+css布局<br>运用css的transform属性展示出3D效果<br>优雅降级，兼容IE7+显示<br>
+				</div>
+			</li>
+			<li><a href="my-project/页面/慕课专题-靠实战进BAT/index.html">慕课网专题页面1</a>
+				<div class="content_list_showBox">
+					关键词：<br>  div+css布局<br>兼容IE8+<br>
+				</div>
+			</li>
 		</ul>
+		<div class="content_info ">
+			<ul class="">
+				<li class="content_info_cnblog"><a href="http://www.cnblogs.com/ruanxh123"  target="_blank">一只猪++</a></li>
+				<li class="content_info_github"><a href="https://github.com/Xixi20160512" target="_blank">Xixi20160512</a></li>
+			</ul>
+		</div>
 	</div>
 	<div class="backtotop"><img src="my-project/小组件/返回顶部/backTop.png"></div>
 	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>

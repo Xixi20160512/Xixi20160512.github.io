@@ -22,7 +22,7 @@
 		.title_1{margin-top: 15px;margin-bottom: 100px;font-weight: normal;color: #274A84;}
 		.innerBox{width: 1000px;height: 305px;}
 		.innerBox>div{width: 280px;height: 305px;margin-right: 80px;background-color: #fff;float: left;position: relative;box-shadow: 2px 2px 12px #c0c0c0;}
-		.innerBox>div:last-child{margin-right: 0;}   /* 在box2的时候，有一种其他的方法解决这个问题*/
+		.innerBox .alibaba{margin-right: 0 !important;}   /* 在box2的时候，有一种其他的方法解决这个问题*/
 		.innerBox img{position: absolute;left: 90px;top: -70px;}
 		.innerBox p{margin-bottom: 12px;}
 		.innerBox_teamName{margin-top: 44px;font-size: 16px;font-weight: bold;line-height: 16px;}
@@ -35,7 +35,7 @@
 		.box2_innerBox{width: 1120px;height: 812px;}
 		.box2_innerBox li{width: 320px;height: 326px;margin-top: 80px;margin-right: 80px;box-shadow: 0px 8px 16px 0px rgba(7, 17, 27, 0.4);}
 		.box2_innerBox li:first-child{box-shadow: none;}
-		.box2_innerBox li>div{width: 280px;height: 286px;background: rgba(255,255,255,0.7);margin:20px auto;}
+		.box2_innerBox li>div{width: 280px;height: 286px;background: rgba(255,255,255,0.7);/*filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#82ffffff,endColorstr=#82ffffff);*/margin:20px auto;}
 		.box2_innerBox_li1{background: url(img/list_red.jpg);color: #ffffff;}
 		.box2_innerBox_li2{background: url(img/list1.jpg);}
 		.box2_innerBox_li3{background: url(img/list2.jpg);}
@@ -66,6 +66,18 @@
 		/*bottom样式*/
 		.bottom{height: 100px;background: rgb(39, 74, 132);line-height: 100px;color: #fff;font-size:14px;text-align: center;}
 	</style>
+	<!--[if lte IE 9]>
+	   <style type="text/css">
+
+	   .color-block {
+	       background:transparent;
+	       filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#82ffffff,endColorstr=#82ffffff);
+	       zoom: 1;
+	    }
+
+	    </style>
+
+	<![endif]-->
 </head>
 <body>
 	<div class="top">
@@ -83,7 +95,7 @@
 		<h1 class="title">入职敲门砖</h1>
 		<h2 class="title_1">实战课学员专享特权</h2>
 		<div class="innerBox auto">
-			<div name="tencent">
+			<div class="tencent">
 				<img src="img/icon_qq.png">
 				<p class="innerBox_teamName">腾讯AlloyTeam</p>
 				<p class="innerBox_into">腾讯Web前端团队</p>
@@ -95,7 +107,7 @@
 				<p class="innerBox_job_font">要求：较强的自主学习能力</p>
 				<p class="innerBox_job_font">熟悉Web性能优化；熟悉CSS3</p>
 			</div>
-			<div name="baidu">
+			<div class="baidu">
 				<img src="img/icon_baidu.png">
 				<p class="innerBox_teamName">百度FEX团队</p>
 				<p class="innerBox_into">前端开发方向</p>
@@ -106,7 +118,7 @@
 				<p class="innerBox_job_font mgt24">名额：2个</p>
 				<p class="innerBox_job_font">要求：看重计算机基础，偏全栈</p>
 			</div>
-			<div name="alibaba">
+			<div class="alibaba">
 				<img src="img/icon_tianmao.png" alt="">
 				<p class="innerBox_teamName">阿里聚划算团队</p>
 				<p class="innerBox_into">阿里前端团队</p>
@@ -128,7 +140,7 @@
 				<p class="f20">用项目经验和作品证明你的<br>编程能力</p>
 				</li>
 				<li class="box2_innerBox_li2">
-					<div class="">
+					<div class="color-block">
 						<div class="top auto">
 							<p class="f24">7天搞定Node.js微信公众号开发</p>
 						</div>
@@ -143,8 +155,7 @@
 					</div>
 				</li>
 				<li class="box2_innerBox_li3 mgr0">
-					<div class="">
-					<div class="">
+					<div class="color-block">
 						<div class="top auto">
 							<p class="f24">用组件方式开发Web App全站</p>
 						</div>
@@ -157,10 +168,9 @@
 							</div>
 						</a>
 					</div>
-					</div></li>
+				</li>
 				<li class="box2_innerBox_li4">
-					<div class="">
-					<div class="">
+					<div class="color-block">
 						<div class="top auto">
 							<p class="f24">前端到后台ThinkPHP开发整站</p>
 						</div>
@@ -173,11 +183,9 @@
 							</div>
 						</a>
 					</div>
-					</div>
 				</li>
 				<li class="box2_innerBox_li5">
-					<div class="">
-					<div class="">
+					<div class="color-block">
 						<div class="top auto">
 							<p class="f24">所向披靡的响应式开发</p>
 						</div>
@@ -190,11 +198,9 @@
 							</div>
 						</a>
 					</div>
-					</div>
 				</li>
 				<li class="box2_innerBox_li6 mgr0">
-					<div class="">
-					<div class="">
+					<div class="color-block">
 						<div class="top auto">
 							<p class="f24">HTML5 移动Web App阅读器</p>
 						</div>
@@ -206,7 +212,6 @@
 							立即报名
 							</div>
 						</a>
-					</div>
 					</div>
 				</li>
 			</ul>
