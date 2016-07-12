@@ -1,6 +1,6 @@
 /*reset.css*/
 *{ margin:0; padding:0;}
-body{font:12px/1.125 "Microsoft YaHei",Helvetica,sans-serif;background:#fff;height: 2000px;position: relative;}
+body{font:12px/1.125 "Microsoft YaHei",Helvetica,sans-serif;background:#fff;position: relative;}
 table{border-collapse:collapse;border-spacing:0;}
 li{list-style:none;}
 fieldset,img{border:0;}
