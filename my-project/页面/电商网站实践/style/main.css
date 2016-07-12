@@ -1,0 +1,67 @@
+.mainwidth{width: 1000px;margin-left: auto;margin-right: auto;}
+.le{float: left;}
+.ri{float: right;}
+
+/*topbar*/
+.topbar{background-color: #f7f7f7;height: 31px;line-height: 31px;}
+.le_1{background: url(../img/未标题-1.gif)  left center no-repeat;padding-left: 19px;}
+.topbar a:hover{color: red;}
+
+/*logobar*/
+.logo{width: 189px;}
+.logoimg{margin-top: 10px;margin-left: 30px;}
+.logobar{background-color: #1d7ad9;height: 85px;}
+.seach{width: 600px;height: 85px;}
+.seach_button,.seach_input{margin-top: 25px;}
+.seach_input{width: 350px;height: 35px;display: inline-block;position: relative;margin-left: 146px;}
+.seachbox{width: 340px;height: 35px;padding: 0 5px;font: normal 14px/35px "微软雅黑";position: absolute;}
+.seach_button{height: 35px;}
+.seachbut{width: 70px;height: 35px;background-color:#ff8c00;color: #fff;margin:25 0 0 -4px;font-family: "微软雅黑";font-size: 14px;}
+.shopcar{width: 146px;height: 35px;background-color:#ff8c00;margin-top: 25px; margin-right: 59px;font: 14px/35px "微软雅黑";color: #fff;}
+.shopcartext{display: inline-block; background:  url(../img/shop.gif) 10px no-repeat;l ;height: 35px;float: left;
+text-indent: 40px; width: 87px;border-right: solid 1px #000;}
+.shopcarnum{display: inline-block;width: 28px;height: 35px;text-align: right; background:  url(../img/num.gif) 34px no-repeat;padding-right: 29px;}
+
+/*botbar*/
+.botbar{height: 35px;background-color: #1369c0;font: 14px "微软雅黑";color: #fff; }
+.allgood{width: 189px;height: 35px;position: relative;}
+.allgood h3{line-height: 35px;text-align: center; }
+.allgood i{display: inline-block;margin-left: 10px;width: 12px;height: 8px; background: url(../img/array.gif) no-repeat;}
+
+/*商品分类列表默认*/
+.allgood_list{background-color: #4593fd;}
+.allgood_list .b{font-size: 14px  "微软雅黑";}
+.list_item a{color: #fff;}
+.allgood_list dt{font:normal 14px/14px "微软雅黑";margin-bottom: 7px;background: url(../img/jiantou.gif) right center no-repeat;}
+.allgood_list dd{font:normal 12px/12px "微软雅黑"; }
+.list_item{padding:14px 10px;border-bottom: 1px solid #3487f2;border-top: 1px solid #5aa1fe;}
+.list_item_lastOne{padding-bottom: 24px;}
+.list_item .aLink{width: 48px;height: 14px;display: inline-block;background: url(../img/aLink.gif) left center no-repeat;text-align: center;text-decoration: underline;}
+.nav li{float: left;width: 100px;height: 35px;}
+.nav a{color: #fff;display: inline-block; margin-top: 7.5px;margin-left:  29.5px;}
+.nav .active{background-color: #4593fd;}
+
+/*商品列表选中*/
+.xuanzhong{background-color: #fff;border-left: 1px solid #4593fd;}
+.xuanzhong dt{background: none;}
+.xuanzhong a{color: #000;}
+.xuanzhong .aLink{color: #fff;text-decoration: none;}
+/*弹出的列表*/
+.rightBox{position: absolute;left: 189px;top: 35px;width: 570px;border: 1px solid #dddddd;display: none;}
+.right_item {margin-top: 16px;border-bottom: 1px solid #e5e5e5;margin-left: 18px;margin-right: 20px;padding-bottom: 12px;}
+.right_item dt{height: 14px;color: #4b88da;font-weight:bold;}
+.right_item dd{margin-left:67px;margin-top: -14px;padding-right: 26px;}
+.right_item a{margin-right: 12px;}
+.rightBox .link{margin-left: 18px;}
+.rightBox .link a{ display: inline-block;margin: 15px 10px 14px 0; background-color:  #2785e6;color: #fff;padding: 7px 14px 5px 8px;}
+.link  span{width: 11px;height: 11px; display: inline-block; background: url(../img/jiantou.gif) right center no-repeat;margin-left: 8px;}
+/*焦点图*/
+.allgood_jiaodian{position: absolute;left: 189px;top: 35px;width: 811px;height: 325px;background: url(../img/jiaodian.jpg);}
+/*内容部分样式*/
+.content{width: 1000px;margin: 325px auto 0;}
+.content_box1_title{padding-left: 57px;padding-right: 21px;height: 75px;background: url(../img/icon_1.png)0 15px no-repeat;}
+.content_box1_title .p1{font: normal 24px/75px "微软雅黑";display: inline-block;}
+.content_box1_title .p2{font: normal 12px/75px "新宋体";float: right;}
+.content_box1_body_jiaodiantu{width: 189px;height: 400px;float: left;}
+.content_box1_body .B{width: 201px;height: 397px;border-right: 1px solid #e5e5e5;float: left;}
+.content_box1_body_list{width: 808px;height: 396px;border-top: 1px solid #e5e5e5;border-bottom: 3px solid #ff7201;float: left;}
