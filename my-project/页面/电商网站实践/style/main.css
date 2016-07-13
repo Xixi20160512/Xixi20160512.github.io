@@ -90,5 +90,5 @@ text-indent: 40px; width: 87px;border-right: solid 1px #000;}
 /*底部区域*/
 .footer{margin: 41px 0 7px;height: 223px;background-color: #d4d4d4;}
 .footer .p_1{padding-top: 51px;}
-.footer_icon{display: inline-block;margin: 33px auto 0 ;width: 608px;padding-left: 24px;}
+.footer_icon{margin: 33px auto 0 ;width: 608px;padding-left: 24px;}
 .footer_icon .C{float: left;margin-right: 24px;}
