@@ -14,7 +14,5 @@ abbr,acronym{border:0;font-variant:normal;}
 a{color:#666666;text-decoration:none;cursor: pointer;}
 a:hover{text-decoration:none;}
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
-.clearfix{display:inline-block;}
-.clearfix{display:block;}
 .clear{clear:both;height:0;font:0/0 Arial;visibility:hidden;}
 .none{display:none}
