@@ -4,6 +4,7 @@ body{font:12px/1.125 "Microsoft YaHei",Helvetica,sans-serif;background:#fff;posi
 table{border-collapse:collapse;border-spacing:0;}
 li{list-style:none;}
 fieldset,img{border:0;}
+img{display: inline-block;}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
 q:before,q:after{content:'';}
 input{border: 0 none;}
