@@ -25,21 +25,17 @@
 			clearInterval(timer1);
 			now = this.index;
 			console.log(now);
-			act(imgs, 'left', -img_w * (now));
-			tab();
+			scroll();
 			timer1 = setInterval(auto,3000);
 		}
 	};
-	// function setTimer1 (){
-	// 	timer1 = setInterval(auto,3000);	
-	// }
-	//移入移出效果
-	// box.onmouseover = function () {
-	// 	clearInterval(timer1)
-	// }
-	// box.onmouseout = function () {
-	// 	timer1 = setInterval(auto,3000);
-	// }
+	移入移出效果
+	imgs.onmouseover = function () {
+		clearInterval(timer1)
+	}
+	imgs.onmouseout = function () {
+		timer1 = setInterval(auto,3000);
+	}
 	function scroll(){
 	    act(imgs, 'left', -img_w * (now));
 	    tab();
