@@ -18,7 +18,7 @@
 		    now = 0;
 		}
 		scroll();
-		timer && timer = setInterval(auto,3000);
+		timer && (timer = setInterval(auto,3000));
 	}
 	for (var i = li.length - 1; i >= 0; i--) {
 		li[i].index = i;
