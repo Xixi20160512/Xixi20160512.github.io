@@ -59,7 +59,7 @@
 	    }, 30);
 	}
 	function tab(){
-		for(i = li.length-1,i >= 0,i--){
+		for(i = li.length-1;i >= 0;i--){
 			li[i].className = 'off';
 		}
 		li[now].className = 'on';
