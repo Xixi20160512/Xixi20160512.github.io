@@ -20,16 +20,20 @@
 		scroll();
 	}
 	for (var i = li.length - 1; i >= 0; i--) {
-		li[i].onclick = function () {
-				};
+		li[i].onclick = (function (msg){
+			return function (){
+				now = mag;
+				auto();
+			}
+		})(i)
 	};
 	//移入移出效果
-	box.onmouseover = function () {
-		clearInterval(timer1)
-	}
-	box.onmouseout = function () {
-		timer1 = setInterval(auto,3000);
-	}
+	// box.onmouseover = function () {
+	// 	clearInterval(timer1)
+	// }
+	// box.onmouseout = function () {
+	// 	timer1 = setInterval(auto,3000);
+	// }
 	function scroll(){
 	    act(imgs, 'left', -img_w * (now));
 	    tab();
