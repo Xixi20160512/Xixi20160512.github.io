@@ -25,8 +25,8 @@
 		li[i].onclick = function(){
 			now = this.index;
 			console.log(now);
-			// clearInterval(timer1);
-			// auto(timer1);
+			act(imgs, 'left', -img_w * (now));
+			tab();
 		}
 	};
 	//移入移出效果
@@ -59,11 +59,8 @@
 	    }, 30);
 	}
 	function tab(){
-		var nbw = now -1;
-		if (nbw >= 0) {
-			li[nbw].className = 'off';
-		} else {
-			li[2].className = 'off';
+		for(i = li.length-1,i >= 0,i--){
+			li[i].className = 'off';
 		}
 		li[now].className = 'on';
 	}
