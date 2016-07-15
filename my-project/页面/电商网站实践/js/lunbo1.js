@@ -11,24 +11,28 @@
 	//定时切换
 	timer1 = setInterval(auto,3000);  /*setInterval不支持函数带有参数？*/
 	//nav按钮的点击事件
-	function auto(timer) {
+	function auto() {
 		if(now < len - 1){
 		    now++;
 		} else {
 		    now = 0;
 		}
 		scroll();
-		timer && (timer = setInterval(auto,3000));
 	}
 	for (var i = li.length - 1; i >= 0; i--) {
 		li[i].index = i;
 		li[i].onclick = function(){
+			clearInterval(timer1);
 			now = this.index;
 			console.log(now);
 			act(imgs, 'left', -img_w * (now));
 			tab();
+			timer1 = setInterval(auto,3000);
 		}
 	};
+	// function setTimer1 (){
+	// 	timer1 = setInterval(auto,3000);	
+	// }
 	//移入移出效果
 	// box.onmouseover = function () {
 	// 	clearInterval(timer1)
