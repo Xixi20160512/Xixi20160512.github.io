@@ -11,21 +11,22 @@
 	//定时切换
 	timer1 = setInterval(auto,3000);  /*setInterval不支持函数带有参数？*/
 	//nav按钮的点击事件
-	function auto() {
+	function auto(timer) {
 		if(now < len - 1){
 		    now++;
 		} else {
 		    now = 0;
 		}
 		scroll();
+		timer && timer = setInterval(auto,3000);
 	}
 	for (var i = li.length - 1; i >= 0; i--) {
-		li[i].onclick = (function (msg){
-			return function (){
-				now = msg;
-				auto();
-			}
-		})(i)
+		li[i].index = i;
+		li[i].onclick = function(){
+			now = this.index;
+			clearInterval(timer1);
+			auto(timer1);
+		}
 	};
 	//移入移出效果
 	// box.onmouseover = function () {
