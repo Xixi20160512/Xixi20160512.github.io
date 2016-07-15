@@ -22,7 +22,7 @@
 	for (var i = li.length - 1; i >= 0; i--) {
 		li[i].onclick = (function (msg){
 			return function (){
-				now = mag;
+				now = msg;
 				auto();
 			}
 		})(i)
