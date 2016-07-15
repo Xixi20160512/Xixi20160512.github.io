@@ -29,7 +29,7 @@
 			timer1 = setInterval(auto,3000);
 		}
 	};
-	移入移出效果
+	// 移入移出效果
 	imgs.onmouseover = function () {
 		clearInterval(timer1)
 	}
