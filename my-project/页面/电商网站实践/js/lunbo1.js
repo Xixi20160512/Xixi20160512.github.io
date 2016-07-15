@@ -24,8 +24,9 @@
 		li[i].index = i;
 		li[i].onclick = function(){
 			now = this.index;
-			clearInterval(timer1);
-			auto(timer1);
+			console.log(now);
+			// clearInterval(timer1);
+			// auto(timer1);
 		}
 	};
 	//移入移出效果
