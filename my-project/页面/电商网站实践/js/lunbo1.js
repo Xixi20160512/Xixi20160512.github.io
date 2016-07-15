@@ -67,11 +67,11 @@
 		}
 		li[now].className = 'on';
 	}
-	function css(obj, attr){
-	    if(obj.currentStyle){
-	        return obj.currentStyle[attr];
-	    } else {
-	        return getComputedStyle(obj, false)[attr];
-	    }
-	}
+        function css(obj, attr){
+            if(obj.currentStyle){
+                return obj.currentStyle[attr];
+            } else {
+                return getComputedStyle(obj, false)[attr];
+            }
+        }
 })()
