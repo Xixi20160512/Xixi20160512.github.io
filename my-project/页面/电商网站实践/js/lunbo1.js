@@ -36,10 +36,12 @@
 	imgs.onmouseout = function () {
 		timer1 = setInterval(auto,3000);
 	}
+	//整个图片和nav切换的函数，不是必要的
 	function scroll(){
 	    act(imgs, 'left', -img_w * (now));
 	    tab();
 	}
+	//图片切换函数
 	function act(obj, attr, target, fn){
 	    obj.timer && clearInterval(obj.timer);
 	    obj.timer = setInterval(function(){
@@ -58,6 +60,7 @@
 	        }
 	    }, 30);
 	}
+	//nav切换
 	function tab(){
 		for(i = li.length-1;i >= 0;i--){
 			li[i].className = 'off';
