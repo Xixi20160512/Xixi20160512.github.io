@@ -1,4 +1,4 @@
-document.ready = (function () {
+window.onload = (function () {
 	var box = document.getElementById('lunbo1');
 	var ul = box.getElementsByTagName('ul')[0];
 	var li = ul.getElementsByTagName('li');
