@@ -1,4 +1,4 @@
-(function () {
+document.ready = (function () {
 	var box = document.getElementById('lunbo1');
 	var ul = box.getElementsByTagName('ul')[0];
 	var li = ul.getElementsByTagName('li');
@@ -73,6 +73,7 @@
 			 }
 		 else{
 		  	return getComputedStyle(obj, false)[attr];
+		  	console.log(1);
 		 }
 		}
 })()
