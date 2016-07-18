@@ -24,9 +24,9 @@
 	//nav切换函数
 	function nav(){
 		for(var i = 0;i<3;i++){
-			nav2s[i].className = "off2";
+			nav2s[i].className = "nav2";
 		}
-		nav2s[now].className = "on2"
+		nav2s[now].className += ' on2';
 	}
 	//fade函数，提供对象和目标，实现透明度的渐变
 	function fade(obj,attr,target) {
