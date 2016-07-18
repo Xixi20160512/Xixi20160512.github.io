@@ -12,7 +12,11 @@
 		}
 		var imgn = imgs[now];
 		console.log(imgn)
-		// fade();
+		for(var i <3;i = 0;i++){
+			imgs[i].index = i;
+			fade(imgs[i],'opacity',0)
+		}
+		fade(imgn,'opacity',100);
 	}
 	//fade函数，提供对象和目标，实现透明度的渐变
 	function fade(obj,attr,target) {
