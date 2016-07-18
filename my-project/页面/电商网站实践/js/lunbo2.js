@@ -18,6 +18,7 @@
 			fade(imgs[i],'opacity',0)
 		}
 		fade(imgn,'opacity',100);
+		nav();
 	}
 	//nav切换函数
 	function nav(){
