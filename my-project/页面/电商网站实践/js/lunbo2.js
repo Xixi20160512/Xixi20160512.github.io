@@ -1,7 +1,8 @@
 (function () {
 	var box = document.getElementById('lunbo2');
 	var imgs = box.getElementsByTagName('img');
-	var nav2s = box.getElementsByTagName('div').getElementsByTagName('div');
+	var nav2box = box.getElementsByTagName('div');
+	var nav2s = nav2box.getElementsByTagName('div');
 	var timer1 = null;
 	var now = 0;
 	timer1 = setInterval(auto,4000);
