@@ -1,6 +1,7 @@
 (function () {
-	var box = document.getElementById('lunbo2')
-	var imgs = box.getElementsByTagName('img')
+	var box = document.getElementById('lunbo2');
+	var imgs = box.getElementsByTagName('img');
+	var nav2s = box.getElementsByTagName('div').getElementsByTagName('div');
 	var timer1 = null;
 	var now = 0;
 	timer1 = setInterval(auto,4000);
@@ -18,28 +19,33 @@
 		}
 		fade(imgn,'opacity',100);
 	}
+	//nav切换函数
+	function nav(){
+		for(var i = 0;i<3;i++){
+			nav2s[i].className = "nav2" + "off";
+		}
+		nav2s[now].className = "nav2" + "on2"
+	}
 	//fade函数，提供对象和目标，实现透明度的渐变
 	function fade(obj,attr,target) {
 		console.log(1);
 		// var obj = imgs[now];
-		obj.timer && clearInterval(obj.timer);	
-			
-			obj.timer = setInterval(function () {
-				var stop = true;
-				var cur = css(obj,attr)*100;
-				var speed = (target - cur)/6;
-				speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
-				
-				if(cur !== target){
-					cur += speed;	
-					obj.style.opacity = cur/100;
-					stop = false;
-				}
-				if(stop){
-					clearInterval(obj.timer);
-					obj.timer = null;
-				}	
-				},30)
+		obj.timer && clearInterval(obj.timer);		
+		obj.timer = setInterval(function () {
+			var stop = true;
+			var cur = css(obj,attr)*100;
+			var speed = (target - cur)/6;
+			speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+			if(cur !== target){
+				cur += speed;	
+				obj.style.opacity = cur/100;
+				stop = false;
+			}
+			if(stop){
+				clearInterval(obj.timer);
+				obj.timer = null;
+			}	
+			},30)
 		
 			
 	}
