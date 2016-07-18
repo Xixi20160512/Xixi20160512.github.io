@@ -3,20 +3,20 @@
 	var imgs = box.getElementsByTagName('img')
 	var timer1 = null;
 	var now = 0;
-	// timer1 = setInterval(auto,4000);
-	// function auto() {
-	// 	if (now < 2) {
-	// 		now++;
-	// 	} else {
-	// 		now = 0;
-	// 	}
-	// 	var imgn = imgs[now];
-	// 	// console.log(imgs[now])
-	// 	fade("opacity");
-	// }
-	fade(imgs[2],'opacity',100)
+	timer1 = setInterval(auto,4000);
+	function auto() {
+		if (now < 2) {
+			now++;
+		} else {
+			now = 0;
+		}
+		var imgn = imgs[now];
+		console.log(imgn)
+		// fade();
+	}
+	//fade函数，提供对象和目标，实现透明度的渐变
 	function fade(obj,attr,target) {
-		console.log(obj);
+		console.log(1);
 		// var obj = imgs[now];
 		obj.timer && clearInterval(obj.timer);	
 			
