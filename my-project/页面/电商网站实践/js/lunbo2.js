@@ -24,7 +24,7 @@
 				var stop = true;
 				var cur = css(obj,attr)*100;
 				var speed = (target - cur)/6;
-				speed = speed > 0 ? Math.ceil(soeed) : Math.floor(speed);
+				speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
 				
 				if(cur !== target){
 					cur += speed;	
