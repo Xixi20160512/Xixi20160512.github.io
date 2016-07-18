@@ -12,7 +12,7 @@
 		}
 		var imgn = imgs[now];
 		console.log(imgn)
-		for(var i <3;i = 0;i++){
+		for(var i = 0;i < 3;i++){
 			imgs[i].index = i;
 			fade(imgs[i],'opacity',0)
 		}
