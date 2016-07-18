@@ -207,7 +207,7 @@
 				</ul>
 			</div>
 		</div>
-	</div>
+		</div>
 	<div class="footer">
 		<p class="font12 p_1 tac mb10">慕课简介|慕课公告| 招纳贤士| 联系我们|客服热线：400-675-1234</p>
 		<p class="font12 p_2 tac">Copyright © 2006 - 2014 慕课版权所有   京ICP备09037834号   京ICP证B1034-8373号   某市公安局XX分局备案编号：123456789123</p>
@@ -218,25 +218,13 @@
 			<li class="C"><img src="img/footer_icon.png" alt=""></li>
 		</ul>
 	</div>
-	<script src="js/lunbo1.js"></script>
-	<script src="js/lunbo2.js"></script>
-<script>
-	// window.onload=function () {
-		
-	// }
-	// function mov() {
-	// 	var li=document.getElementBy('')
-	// 	for (var a = li.length - 1; a >= 0; a--) {
-	// 		li[a].onmouseover=function () {
-	// 			// this.className="active";
-	// 			this.className="active";
-	// 		}
-	// 		li[a].onmouseout=function () {
-	// 			this.className="";
-	// 		}
-
-	// 	}
-	// }
-</script>
+	<script src="../../../javascripts/sea-2.1.1.js"></script>
+	<script>
+		// seajs 的简单配置
+		seajs.config({
+		  base: "../../../my-project/页面/电商网站实践/js/"
+		})
+		seajs.use('lunbo1')
+	</script>
 </body>
 </html>
