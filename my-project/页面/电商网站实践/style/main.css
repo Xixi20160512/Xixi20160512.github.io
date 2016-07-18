@@ -79,9 +79,9 @@ text-indent: 40px; width: 87px;border-right: solid 1px #000;}
 .content_box_body_jiaodiantu .imgs{width: 600px;position: absolute;left: 0;font-size: 0;/*hack解决img三像素问题*/}
 /*第二块列表的轮播图*/
 .content_box_body_jiaodiantu_nav{height: 10px;width: 100%;position: absolute;bottom: 15px;left: 23px;}
-.content_box_body_jiaodiantu_nav>.nav{height: 10px;width:10px;margin-right: 8px;float: left;border-radius: 5px;}
-.content_box_body_jiaodiantu_nav>.off{background-color: #fff; }
-.content_box_body_jiaodiantu_nav>.on{background-color: #000;}
+.content_box_body_jiaodiantu_nav .nav2{height: 10px;width:10px;margin-right: 8px;float: left;border-radius: 5px;}
+.content_box_body_jiaodiantu_nav .off2{background-color: #fff; }
+.content_box_body_jiaodiantu_nav .on2{background-color: #000;}
 .content_box_body_jiaodiantu .img_ab{position: absolute;opacity:0;}
 .content_box_body_jiaodiantu .img_ab_none{opacity: 0;}
 .content_box_body{width: 1002px;}
