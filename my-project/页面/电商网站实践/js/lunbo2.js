@@ -3,32 +3,40 @@
 	var imgs = box.getElementsByTagName('img')
 	var timer1 = null;
 	var now = 0;
-	timer1 = setInterval(auto,4000);
-	function auto() {
-		if (now < 2) {
-			now++;
-		} else {
-			now = 0;
-		}
-		var imgn = imgs[now];
-		// console.log(imgs[now])
-		fade("opacity");
-	}
-	function fade(attr) {
-		console.log(imgs[now]);
-		var obj = imgs[now];
-		var pre = now-1;
-		if (pre < 0) {
-			imgs[2].style.display = "none";
-		} else {
-			imgs[pre].style.display = "none";
+	// timer1 = setInterval(auto,4000);
+	// function auto() {
+	// 	if (now < 2) {
+	// 		now++;
+	// 	} else {
+	// 		now = 0;
+	// 	}
+	// 	var imgn = imgs[now];
+	// 	// console.log(imgs[now])
+	// 	fade("opacity");
+	// }
+	fade(imgs[2],'opacity',100)
+	function fade(obj,attr,target) {
+		console.log(obj);
+		// var obj = imgs[now];
+		obj.timer && clearInterval(obj.timer);	
+			
 			obj.timer = setInterval(function () {
-				// var cur = css(obj,attr);
-				var speed = (1 - 0)/6;
-				speed = Math.ceil(speed);
-				imgs[now].style.display = "inline";	
+				var stop = true;
+				var cur = css(obj,attr)*100;
+				var speed = (target - cur)/6;
+				speed = speed > 0 ? Math.ceil(soeed) : Math.floor(speed);
+				
+				if(cur !== target){
+					cur += speed;	
+					obj.style.opacity = cur/100;
+					stop = false;
+				}
+				if(stop){
+					clearInterval(obj.timer);
+					obj.timer = null;
+				}	
 				},30)
-		}
+		
 			
 	}
         function css(obj, attr){
