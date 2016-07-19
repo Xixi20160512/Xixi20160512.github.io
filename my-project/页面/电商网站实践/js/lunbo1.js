@@ -50,8 +50,7 @@ window.onload = define('lunbo1',function (require) {
 			}
 			li[now].className = 'on';
 		}
-	}
-//轮播2
+	//轮播2
 	var box1 = document.getElementById('lunbo2');
 	var imgs = box1.getElementsByTagName('img');
 	var nav_box = box1.getElementsByTagName('div')[0];
@@ -81,5 +80,7 @@ window.onload = define('lunbo1',function (require) {
 		}
 		nav2s[now].className += ' on2';
 	}
+	}
+
 ) 
 
