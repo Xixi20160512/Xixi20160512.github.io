@@ -1,8 +1,15 @@
-define('mod1',function(require, exports, module){
-  // 通过 require 引入依赖
-
-  // 通过 exports 对外提供接口
-  exports.fade = function (obj,attr,target) {
+define('mod1',function(exports){
+//私有方法
+var css = function (obj, attr) {
+	 if(obj.currentStyle){
+			 return obj.currentStyle[attr];
+		 }
+	 else{
+		 	return getComputedStyle(obj, false)[attr];
+		 }
+	}  
+// 通过 exports 对外提供接口
+exports.fade = function (obj,attr,target) {
 		console.log(1);
 		// var obj = imgs[now];
 		obj.timer && clearInterval(obj.timer);		
@@ -40,17 +47,4 @@ define('mod1',function(require, exports, module){
 		    }
 		}, 30);
 	}
-	var css = function (obj, attr) {
-		 if(obj.currentStyle){
-		 	 return obj.currentStyle[attr];
-			 }
-		 else{
-		  	return getComputedStyle(obj, false)[attr];
-		  	console.log(1);
-		 }
-	}
-
-  // 或者通过 module.exports 提供整个接口
-  // module.exports = ...
-
 });
