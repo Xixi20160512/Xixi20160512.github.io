@@ -105,4 +105,4 @@ window.onload = define('lunbo1',function (require) {
 			},30)
 	}
 })()
-}
+
