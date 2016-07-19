@@ -51,24 +51,24 @@ window.onload = define('lunbo1',function (require) {
 		}
 	//轮播2
 (function(){
-		var box1 = document.getElementById('lunbo2');
-	var imgsb = box1.getElementsByTagName('img');
-	var nav_box = box1.getElementsByTagName('div')[0];
+	var box = document.getElementById('lunbo2');
+	var imgs = box.getElementsByTagName('img');
+	var nav_box = box.getElementsByTagName('div')[0];
 	var nav2s = nav_box.getElementsByTagName('div');
 	var timer2 = null;
-	var nowa = 0;
+	var now = 0;
 	timer2 = setInterval(autoa,4000);
 	function autoa() {
-		if (nowa < 2) {
-			nowa++;
+		if (now < 2) {
+			now++;
 		} else {
-			nowa = 0;
+			now = 0;
 		}
-		var imgn = imgsb[nowa];
+		var imgn = imgs[now];
 		console.log(imgn)
 		for(var i = 0;i < 3;i++){
-			imgsb[i].index = i;
-			mod1.fade(imgsb[i],'opacity',0)
+			imgs[i].index = i;
+			mod1.fade(imgs[i],'opacity',0)
 		}
 		mod1.fade(imgn,'opacity',100);
 		nav();
