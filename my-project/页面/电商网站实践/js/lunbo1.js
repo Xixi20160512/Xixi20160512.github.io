@@ -50,9 +50,8 @@ window.onload = define('lunbo1',function (require) {
 			li[now].className = 'on';
 		}
 	//轮播2
-(function(){
-		var box1 = document.getElementById('lunbo2');
-	var imgs = box1.getElementsByTagName('img');
+	var box1 = document.getElementById('lunbo2');
+	var imgsb = box1.getElementsByTagName('img');
 	var nav_box = box1.getElementsByTagName('div')[0];
 	var nav2s = nav_box.getElementsByTagName('div');
 	var timer2 = null;
@@ -64,11 +63,11 @@ window.onload = define('lunbo1',function (require) {
 		} else {
 			nowa = 0;
 		}
-		var imgn = imgs[nowa];
+		var imgn = imgsb[nowa];
 		console.log(imgn)
 		for(var i = 0;i < 3;i++){
-			imgs[i].index = i;
-			mod1.fade(imgs[i],'opacity',0)
+			imgsb[i].index = i;
+			mod1.fade(imgsb[i],'opacity',0)
 		}
 		mod1.fade(imgn,'opacity',100);
 		nav();
@@ -80,8 +79,5 @@ window.onload = define('lunbo1',function (require) {
 		}
 		nav2s[now].className += ' on2';
 	}
-})()
-	}
-
-) 
+}) 
 
