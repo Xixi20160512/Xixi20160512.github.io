@@ -29,7 +29,7 @@ exports.fade = function (obj,attr,target) {
 			}	
 			},30)
 	}
-	exports.act = function (obj, attr, target, fn) {
+exports.act = function (obj, attr, target, fn) {
 		obj.timer && clearInterval(obj.timer);
 		obj.timer = setInterval(function(){
 		    var stop = true;
