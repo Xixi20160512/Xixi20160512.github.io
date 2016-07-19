@@ -1,6 +1,5 @@
 window.onload = define('lunbo1',function (require) {
 		var mod1 = require('mod1');
-		console.log(mod1.act);
 		var box = document.getElementById('lunbo1');
 		var ul = box.getElementsByTagName('ul')[0];
 		var li = ul.getElementsByTagName('li');
@@ -56,15 +55,15 @@ window.onload = define('lunbo1',function (require) {
 	var nav_box = box1.getElementsByTagName('div')[0];
 	var nav2s = nav_box.getElementsByTagName('div');
 	var timer2 = null;
-	var now = 0;
+	var nowa = 0;
 	timer2 = setInterval(autoa,4000);
 	function autoa() {
-		if (now < 2) {
-			now++;
+		if (nowa < 2) {
+			nowa++;
 		} else {
-			now = 0;
+			nowa = 0;
 		}
-		var imgn = imgs[now];
+		var imgn = imgs[nowa];
 		console.log(imgn)
 		for(var i = 0;i < 3;i++){
 			imgs[i].index = i;
