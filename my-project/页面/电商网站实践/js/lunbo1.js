@@ -1,4 +1,4 @@
-define('lunbo1',function (require) {
+window.onload = define('lunbo1',function (require) {
 		var mod1 = require('mod1');
 		console.log(mod1.act);
 		var box = document.getElementById('lunbo1');
@@ -51,7 +51,6 @@ define('lunbo1',function (require) {
 			li[now].className = 'on';
 		}
 	}
-	) 
 //轮播2
 (function () {
 	var box = document.getElementById('lunbo2');
@@ -105,4 +104,5 @@ define('lunbo1',function (require) {
 			},30)
 	}
 })()
+	) 
 
