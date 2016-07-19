@@ -1,4 +1,4 @@
-window.onload = define('lunbo1',function (require) {
+define('lunbo1',function (require) {
 		var mod1 = require('mod1');
 		console.log(mod1.act);
 		var box = document.getElementById('lunbo1');
