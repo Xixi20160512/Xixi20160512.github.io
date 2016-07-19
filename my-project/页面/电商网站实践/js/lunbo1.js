@@ -52,13 +52,13 @@ window.onload = define('lunbo1',function (require) {
 		}
 	}
 //轮播2
-	var box = document.getElementById('lunbo2');
-	var imgs = box.getElementsByTagName('img');
-	var nav_box = box.getElementsByTagName('div')[0];
+	var box1 = document.getElementById('lunbo2');
+	var imgs = box1.getElementsByTagName('img');
+	var nav_box = box1.getElementsByTagName('div')[0];
 	var nav2s = nav_box.getElementsByTagName('div');
-	var timer1 = null;
+	var timer2 = null;
 	var now = 0;
-	timer1 = setInterval(autoa,4000);
+	timer2 = setInterval(autoa,4000);
 	function autoa() {
 		if (now < 2) {
 			now++;
