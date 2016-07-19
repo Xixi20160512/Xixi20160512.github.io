@@ -1,12 +1,12 @@
 define('mod1',function(require,exports){
 //私有方法
 var css = function (obj, attr) {
-	 if(obj.currentStyle){
+	 ////if(obj.currentStyle){
 			 return obj.currentStyle[attr];
-		 }
-	 else{
-		 	return getComputedStyle(obj, false)[attr];
-		 }
+		//  }
+	 //else{
+		//  	// return getComputedStyle(obj, false)[attr];
+		//  }
 	}  
 // 通过 exports 对外提供接口
 exports.fade = function (obj,attr,target) {
