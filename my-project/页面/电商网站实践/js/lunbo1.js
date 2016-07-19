@@ -50,10 +50,8 @@ window.onload = define('lunbo1',function (require) {
 			}
 			li[now].className = 'on';
 		}
-<<<<<<< HEAD
 	}
 	) 
-=======
 //轮播2
 (function () {
 	var box = document.getElementById('lunbo2');
@@ -105,9 +103,6 @@ window.onload = define('lunbo1',function (require) {
 				obj.timer = null;
 			}	
 			},30)
-		
-			
 	}
 })()
 }
->>>>>>> origin/master
