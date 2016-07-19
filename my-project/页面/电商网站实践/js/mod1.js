@@ -1,4 +1,4 @@
-define('mod1',function(exports){
+define('mod1',function(require,exports){
 //私有方法
 var css = function (obj, attr) {
 	 if(obj.currentStyle){
