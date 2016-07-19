@@ -1,13 +1,4 @@
 define('mod1',function(require,exports){
-//私有方法
-var css = function (obj, attr) {
-	 ////if(obj.currentStyle){
-			 return obj.currentStyle[attr];
-		//  }
-	 //else{
-		//  	// return getComputedStyle(obj, false)[attr];
-		//  }
-	}  
 // 通过 exports 对外提供接口
 exports.fade = function (obj,attr,target) {
 		console.log(1);
@@ -47,4 +38,13 @@ exports.act = function (obj, attr, target, fn) {
 		    }
 		}, 30);
 	}
+//私有方法
+var css = function (obj, attr) {
+	 if(obj.currentStyle){
+			 return obj.currentStyle[attr];
+		 }
+	 else{
+		 	return getComputedStyle(obj, false)[attr];
+		 }
+	}  
 });
