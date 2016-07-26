@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="http://apps.bdimg.com/libs/fontawesome/4.4.0/css/font-awesome.min.css">
+	<style>
+		i,body,div,span,ul,li{margin: 0;padding: 0;}
+		.share{width: 400px;margin: 33px auto;font: 20px/20px normal "calibri";color: #008c8c;}
+		.share-top{height: 34px;padding-left: 10px;border-bottom: 1px solid #c0c0c0;line-height: 34px;}
+		.share-top-text{font-weight: bold;cursor: pointer;color: #005b5b;}
+		.share-top-remove{float: right;margin-right: 10px;color:#737373;display: none;cursor: pointer;}
+		.share-content{padding:0 10px;width: 380px;overflow: hidden;height: 277px;position: relative;}
+		.fa-ul{margin-left: 0;}
+		.share-content-list{position: absolute;top: -277px;width: 380px;}
+		.share-content-item{width: 100%;height: 44px;text-align: left;line-height: 44px;display: inline-block;border-bottom: 1px solid #c0c0c0;left: 0;}
+	</style>
+</head>
+<body>
+	<div class="share" id="share">
+		<div class="share-top">
+			<span class="share-top-text">Share   <i class="fa  fa-share-alt"></i></span> <i class="fa fa-remove share-top-remove"></i>
+		</div>
+		<div class="share-content">
+			<ul class="share-content-list">
+				<li class="share-content-item"><i class="fa fa-facebook-square"></i>  Facebook</li>
+				<li class="share-content-item"><i class="fa fa-twitter-square"></i>  Twitter</li>
+				<li class="share-content-item"><i class="fa fa-linkedin-square"></i>  LinkedIn</li>
+				<li class="share-content-item"><i class="fa fa-google-plus-square"></i>  Google+</li>
+				<li class="share-content-item"><i class="fa fa-pinterest-square"></i>  Pinterest</li>
+				<li class="share-content-item"><i class="fa fa-rss-square"></i>  RSS</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+		window.onload = function () {
+			var share = document.getElementById('share');
+			var share_top = share.getElementsByTagName('div')[0];
+			var share_text = share_top.getElementsByTagName('span')[0];
+			var share_remove = share_top.getElementsByTagName('i')[1];
+			var share_list = share.getElementsByTagName('div')[1].getElementsByTagName('ul')[0];
+			var flag = 0;
+			share_text.onclick = function () {
+			act("0");
+			}
+			share_remove.onclick = function () {
+			act("-277");
+			}
+		
+		function act(target) {
+			var now = css(share_list, "top");
+			if (target +"px" == now) {
+				return;
+			} else {
+			move(share_list,"top",target,toggle_remove);}
+		}
+		//显示或者隐藏remove按钮
+		function toggle_remove() {
+				if (flag == 0) {
+					share_remove.style.display = "inline-block";
+					flag = 1;
+				} else {
+					share_remove.style.display = "none";
+					flag = 0;
+				}
+			}
+		//移动
+		function move(obj, attr, target, fn) {
+			obj.timer && clearInterval(obj.timer);
+			obj.timer = setInterval(function(){
+			    var stop = true;
+			    var cur = parseInt(css(obj, attr));
+			    var speed = (target - cur) / 8;
+			    speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+			    if(cur != target){
+			       			 stop = false;
+			       			 obj.style[attr] = cur + speed + 'px';
+						 }
+			    if(stop){
+				        clearInterval(obj.timer);
+				        obj.timer = null;
+				        fn && fn();
+				    }
+				}, 30);
+			}
+		//获取属性
+		function css(obj, attr) {
+			 if(obj.currentStyle){
+					 return obj.currentStyle[attr];
+				 }
+			 else{
+				 	return getComputedStyle(obj, false)[attr];
+				 }
+			} 
+		}
+	</script>
+</body>
+</html>
