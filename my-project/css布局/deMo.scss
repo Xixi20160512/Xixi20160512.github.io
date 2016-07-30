@@ -1,0 +1,46 @@
+$s_width:500px;
+$s_height:400px;
+$m_width:400px;
+$m_height:300px;
+$color: red,blue,#4db39e,#c0c0c0;
+$base_margin:30px;
+.box1{
+	width:$s_width;
+	height:$s_height;
+	background-color:nth($color,1);
+	position: absolute;
+	left:62px;
+	top:42px;
+	.box1-1{
+		width:$m_width;
+		height: $m_height;
+		background-color: nth($color,2);
+		position: absolute;
+		// position: relative;
+		left:32px;
+		top:32px;
+	}
+	.box1-2{
+		width: $m_width;
+		height: $m_height+22px;
+		background-color: nth($color,3);
+		// position: relative;
+		// top:-$m_height+22px;
+	}
+}
+.box2{
+	width: $s_width*2;
+	height: $s_height;
+	background-color: nth($color,4);
+	margin-top:$base_margin;
+	.box2-1{
+		width: $m_width;
+		height: $m_height;
+		background-color: nth($color,2);
+	}
+	.box2-2{
+		width: $m_width;
+		height: $m_height;
+		background-color: nth($color,1);
+	}
+}
